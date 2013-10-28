@@ -1,1 +1,10 @@
-Nothing to see here...
+<section ng-app>
+	<div ng-controller="UserCtrl">
+		<span>{{count()}}</span>
+		<ul>
+			<li ng-repeat="user in users">
+				{{user.name}}
+			</li>
+		</ul>
+	</div>
+</section>
