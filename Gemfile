@@ -46,3 +46,6 @@ end
 
 # adding pagination
 gem 'kaminari'
+
+#adding angular gem
+gem 'angularjs-rails'#, group: :assets

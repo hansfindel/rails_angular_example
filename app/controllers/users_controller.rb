@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     page = params[:page] || 1
+    query = params[:q]
     @users = User.all.page(page).per(10)
   end
 
