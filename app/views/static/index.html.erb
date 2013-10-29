@@ -1,19 +1,23 @@
-<section ng-app="Contacts">
+<section ng-app="Contacts" class="searching">
 	<div ng-controller="UserCtrl">
 		<form ng-submit="search()" >
-			<input type="text" ng-model="val" ng-change="search()">
+			<input type="text" ng-model="val" ng-change="search()" placeholder="Search friends...">
 			<input type="submit" value="Add">
 		</form>
-		<ul class="results">
-			<li ng-repeat="user in users | filter: val | orderBy: 'name' | limitTo: 10 ">  <!-- | ﬁlter:city -->
+		<ul class="results animate-container">
+			<li class="animate-repeat" ng-repeat="user in users | filter: val | orderBy: 'name' | limitTo: 10 ">  <!-- | ﬁlter:city -->
 				{{user.name}} {{user.last_name}} ({{user.points}})
 			</li>
 		</ul>
-		<ul class="hidden_ul hidden">
-			<li ng-repeat="user in users | orderBy: 'last_name' | orderBy: 'name'">  <!-- | ﬁlter:city -->
-				{{user.name}} {{user.last_name}} ({{user.points}})
-			</li>
-		</ul>
-		<button onclick='$(".hidden_ul").toggleClass("hidden");'> Toggle </button>
+		
+		<article >
+			<ul class="hidden_ul hidden">
+				<li ng-repeat="user in users | orderBy: 'last_name' | orderBy: 'name'" class="user_info">  <!-- | ﬁlter:city -->
+					<div><img ng-src={{user.image_path}} class="user_image" /></div>
+					<div class="words"><h3>{{user.name}} {{user.last_name}}</h3><h4>({{user.points}})</h4></div>
+				</li>
+			</ul>
+			<button onclick='$(".hidden_ul").toggleClass("hidden");'> Toggle </button>
+		</article>
 	</div>
 </section>

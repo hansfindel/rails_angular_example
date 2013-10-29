@@ -14,9 +14,12 @@ last_names = ["Armas", "Benavente", "Contreras", "Caviedes", "Restaino", "AriztÃ
 
 puts "Start creating users"
 r = Random.new
+i = 0
 names.each do |name|
 	last_names.each do |last|
-		User.create({name: name, last_name: last, points: r.rand(100)})
+		path = "/assets/octocat/#{i}.jpg"
+		i = (i.to_i + 1) % 15
+		User.create({name: name, last_name: last, points: r.rand(100), image_path: path})
 	end
 end
 puts "End creating users"

@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20131028223744) do
     t.string   "name"
     t.string   "last_name"
     t.integer  "points"
+    t.string   "image_path"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

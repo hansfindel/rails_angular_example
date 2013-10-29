@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :last_name
       t.integer :points
+      t.string :image_path
 
       t.timestamps
     end
