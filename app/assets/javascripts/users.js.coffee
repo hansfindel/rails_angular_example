@@ -28,9 +28,15 @@ app.factory "User", ["$resource", ($resource) ->
 
     success_handler = (data) ->
       #// console.log data 
-      console.log ("success_handler --")
+      #// urls are unique for resources
+      #// console.log ("success_handler --")
+      #// console.log $scope.users
       data.map (user_resource) ->
-        $scope.users.push user_resource unless $scope.users.indexOf(user_resource) > -1
+        #// console.log user_resource
+        exists = false
+        $scope.users.map (user_registry) ->
+          exists = exists || (user_registry.url == user_resource.url)
+        $scope.users.push user_resource unless exists
 
     User.query({val: $scope.val}, {}, success_handler, error_handler)
     #//entry = Entry.save($scope.newEntry)
