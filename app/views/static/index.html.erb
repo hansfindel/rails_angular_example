@@ -4,10 +4,16 @@
 			<input type="text" ng-model="val" ng-change="search()">
 			<input type="submit" value="Add">
 		</form>
-		<ul>
-			<li ng-repeat="user in users">  <!-- | ﬁlter:city | orderBy: 'name' -->
+		<ul class="results">
+			<li ng-repeat="user in users | filter: val | orderBy: 'name' | limitTo: 10 ">  <!-- | ﬁlter:city -->
 				{{user.name}} {{user.last_name}} ({{user.points}})
 			</li>
 		</ul>
+		<ul class="hidden_ul hidden">
+			<li ng-repeat="user in users | orderBy: 'last_name' | orderBy: 'name'">  <!-- | ﬁlter:city -->
+				{{user.name}} {{user.last_name}} ({{user.points}})
+			</li>
+		</ul>
+		<button onclick='$(".hidden_ul").toggleClass("hidden");'> Toggle </button>
 	</div>
 </section>
