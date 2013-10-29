@@ -1,7 +1,7 @@
 app = angular.module("Contacts", ["ngResource"])
 
 app.factory "User", ["$resource", ($resource) ->
-  $resource("/users/:id", {id: "@id"}, {update: {method: "PUT"}} )
+  $resource("/users/:id", {id: "@id"}, {update: {method: "PUT", url: "@url"}} )
 ]
 
 @UserCtrl = ["$scope", "User", ($scope, User) ->
@@ -37,6 +37,13 @@ app.factory "User", ["$resource", ($resource) ->
     user = this.user 
     console.log user
     user.marked = !(user.marked)
+    if user.marked 
+      user.points++
+    else
+      user.points--
+    #//user.save()
+    console.log user 
+    user.$update()
 
   $scope.class_name = (user) -> 
     if user.marked 
