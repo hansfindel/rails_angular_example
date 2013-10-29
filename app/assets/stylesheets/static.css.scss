@@ -11,7 +11,7 @@ $background: #b0b0b0;
 	padding: 50px;
 	background: $background;
 }
-form input.search{
+form input.search, form textarea.search{
 	width: 300px;
 	margin-left: -1px;
 }
@@ -27,6 +27,9 @@ ul.results{
 		background: linear-gradient(#efefef, #fefefe);
 		&.marked{
 			background: linear-gradient(#a0a0a0, #b0b0b0);
+			&:hover{
+				background: linear-gradient(#a1a1a1, #b1b1b1);
+			}
 		}
 		&:hover{
 			background: #909090;
@@ -66,12 +69,14 @@ li.block{
 		border: solid 1px whitesmoke; 
 		background: #efefef;
 	}
+	margin: 5px;
 }
 .image_containers{
 	display: inline-block;
 	padding: 5px;
 	width: 200px;
 	max-width: 200px;
+	height: 175px;
 	text-align: center;
 	img{
 		display: block;

@@ -1,4 +1,5 @@
 AngularExample::Application.routes.draw do
+  resources :mails, :defaults => { :format => 'json' }
   resources :users, :defaults => { :format => 'json' }
   root to: "static#index"
   # The priority is based upon order of creation: first created -> highest priority.
