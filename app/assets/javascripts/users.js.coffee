@@ -1,7 +1,7 @@
 app = angular.module("Contacts", ["ngResource"])
 
 app.factory "User", ["$resource", ($resource) ->
-  $resource("/users/:id", {id: "@id"}, {update: {method: "PUT"}})
+  $resource("/users/:id", {id: "@id"}, {update: {method: "PUT"}} )
 ]
 
 @UserCtrl = ["$scope", "User", ($scope, User) ->
@@ -33,4 +33,14 @@ app.factory "User", ["$resource", ($resource) ->
     #//$scope.entries.push(entry)
     #//$scope.newEntry = {}
 
+  $scope.contact_click = () ->
+    user = this.user 
+    console.log user
+    user.marked = !(user.marked)
+
+  $scope.class_name = (user) -> 
+    if user.marked 
+      return "marked"
+    return ""
 ]
+
