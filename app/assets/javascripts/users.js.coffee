@@ -21,8 +21,10 @@ app.factory "User", ["$resource", ($resource) ->
     return @scope.users.length
 
   $scope.search = ->
-    console.log $scope.val
+    results = User.query({val: $scope.val})
+    console.log results
     #//entry = Entry.save($scope.newEntry)
     #//$scope.entries.push(entry)
     #//$scope.newEntry = {}
+
 ]

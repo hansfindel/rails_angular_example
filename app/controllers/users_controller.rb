@@ -5,8 +5,12 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     page = params[:page] || 1
-    query = params[:q]
-    @users = User.all.page(page).per(10)
+    query = params[:val]
+    if query
+      @users = User.where("name like ? or last_name like ?", "#{query}%", "#{query}%").order("points desc").page(page).per(10)
+    else
+      @users = User.all.order("points desc").page(page).per(10)
+    end
   end
 
   # GET /users/1
