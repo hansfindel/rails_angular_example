@@ -1,5 +1,9 @@
 <section ng-app="Contacts">
 	<div ng-controller="UserCtrl">
+		<form ng-submit="search()">
+			<input type="text" ng-model="val">
+			<input type="submit" value="Add">
+		</form>
 		<ul>
 			<li ng-repeat="user in users">
 				{{user.name}}

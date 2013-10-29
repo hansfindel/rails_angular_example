@@ -20,4 +20,9 @@ app.factory "User", ["$resource", ($resource) ->
   $scope.count = ->
     return @scope.users.length
 
+  $scope.search = ->
+    console.log $scope.val
+    #//entry = Entry.save($scope.newEntry)
+    #//$scope.entries.push(entry)
+    #//$scope.newEntry = {}
 ]
