@@ -5,7 +5,7 @@
 			<input type="submit" value="Add">
 		</form>
 		<ul class="results animate-container">
-			<li class="animate-repeat user_info" ng-repeat="user in users | filter: val | orderBy: 'name' | limitTo: 10 ">  <!-- | ﬁlter:city -->
+			<li class="animate-repeat user_info" ng-repeat="user in users | filter:own_val | orderBy:'name' | limitTo:10">  <!-- | ﬁlter:city -->
 				<div><img ng-src={{user.image_path}} class="little_user_image" /></div>
 				<div class="words"><h3>{{user.name}} {{user.last_name}}</h3></div>
 				

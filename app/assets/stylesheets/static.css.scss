@@ -16,8 +16,17 @@ form input.search{
 }
 ul.results{
 	margin-left: 0px;
+	width: 303px;
+	position: absolute;
+	border: black 1px solid;
+	border-top: 0px;
+	margin-top: -2px;
 	li{
 		list-style: none;
+		background: linear-gradient(#efefef, #fefefe);
+		&:hover{
+			background: #909090;
+		}
 	}
 }
 li{
@@ -30,6 +39,7 @@ img.user_image{
 img.little_user_image{
 	max-width: 45px;
 	max-height: 45px;
+	vertical-align: middle;
 }
 .user_info{
 	div, div h3, div h4{
@@ -37,7 +47,6 @@ img.little_user_image{
 		vertical-align: middle;
 	}
 }
-
 
 li.block{
 	display: inline-block;
@@ -74,10 +83,10 @@ li.block{
 .animate-repeat.ng-enter,
 .animate-repeat.ng-leave,
 .animate-repeat.ng-move {
-  -webkit-transition:all linear 1.5s;
-  -moz-transition:all linear 1.5s;
-  -o-transition:all linear 1.5s;
-  transition:all linear 1.5s;
+  -webkit-transition:all linear 0.5s;
+  -moz-transition:all linear 0.5s;
+  -o-transition:all linear 0.5s;
+  transition:all linear 0.5s;
 }
  
 .animate-repeat.ng-enter {
