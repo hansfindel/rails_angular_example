@@ -1,20 +1,24 @@
 <section ng-app="Contacts" class="searching">
 	<div ng-controller="UserCtrl">
 		<form ng-submit="search()" >
-			<input type="text" ng-model="val" ng-change="search()" placeholder="Search friends...">
+			<input type="text" ng-model="val" ng-change="search()" placeholder="Search friends...", class="search">
 			<input type="submit" value="Add">
 		</form>
 		<ul class="results animate-container">
-			<li class="animate-repeat" ng-repeat="user in users | filter: val | orderBy: 'name' | limitTo: 10 ">  <!-- | ﬁlter:city -->
-				{{user.name}} {{user.last_name}} ({{user.points}})
+			<li class="animate-repeat user_info" ng-repeat="user in users | filter: val | orderBy: 'name' | limitTo: 10 ">  <!-- | ﬁlter:city -->
+				<div><img ng-src={{user.image_path}} class="little_user_image" /></div>
+				<div class="words"><h3>{{user.name}} {{user.last_name}}</h3></div>
+				
 			</li>
 		</ul>
 		
 		<article >
 			<ul class="hidden_ul hidden">
-				<li ng-repeat="user in users | orderBy: 'last_name' | orderBy: 'name'" class="user_info">  <!-- | ﬁlter:city -->
-					<div><img ng-src={{user.image_path}} class="user_image" /></div>
-					<div class="words"><h3>{{user.name}} {{user.last_name}}</h3><h4>({{user.points}})</h4></div>
+				<li ng-repeat="user in users | orderBy: 'last_name' | orderBy: 'name'" class="user_info block">  <!-- | ﬁlter:city -->
+					<div class="image_containers">
+						<img ng-src={{user.image_path}} class="user_image" />
+						<div class="words"><h4>{{user.name}} {{user.last_name}}({{user.points}})</h4></div>
+					</div>
 				</li>
 			</ul>
 			<button onclick='$(".hidden_ul").toggleClass("hidden");'> Toggle </button>

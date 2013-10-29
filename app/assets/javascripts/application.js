@@ -17,5 +17,4 @@
 //= require angular
 //= require angular-resource
 //= require angular-animate
-//= require ../../../vendor/assets/javascripts/angular-animate
 //= require_tree .

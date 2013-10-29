@@ -10,16 +10,26 @@
 	padding: 50px;
 	background: #b0b0b0;
 }
+form input.search{
+	width: 300px;
+	margin-left: -1px;
+}
 ul.results{
-	margin-left: -30px;
+	margin-left: 0px;
 	li{
 		list-style: none;
 	}
 }
-
+li{
+	list-style: none;
+}
 img.user_image{
 	max-width: 120px;
 	max-height: 120px;
+}
+img.little_user_image{
+	max-width: 45px;
+	max-height: 45px;
 }
 .user_info{
 	div, div h3, div h4{
@@ -29,6 +39,22 @@ img.user_image{
 }
 
 
+li.block{
+	display: inline-block;
+	width: 200px;
+}
+.image_containers{
+	display: inline-block;
+	padding: 5px;
+	img{
+		display: block;
+		margin: auto;
+	}
+	.text{
+		text-align: center;
+		margin: auto;
+	}
+}
 
 
 .animate-container {
@@ -40,19 +66,18 @@ img.user_image{
 }
  
 .animate-container > li {
-  padding:10px;
+  padding:1px;
   list-style:none;
 }
 
-.animate-container,
 .animate-repeat,  
 .animate-repeat.ng-enter,
 .animate-repeat.ng-leave,
 .animate-repeat.ng-move {
-  -webkit-transition:all linear 0.5s;
-  -moz-transition:all linear 0.5s;
-  -o-transition:all linear 0.5s;
-  transition:all linear 0.5s;
+  -webkit-transition:all linear 1.5s;
+  -moz-transition:all linear 1.5s;
+  -o-transition:all linear 1.5s;
+  transition:all linear 1.5s;
 }
  
 .animate-repeat.ng-enter {
