@@ -33,7 +33,7 @@ img.user_image{
 
 .animate-container {
   background:white;
-  border:1px solid black;
+  border:0px solid black;
   list-style:none;
   margin:0;
   padding:0;
@@ -43,7 +43,9 @@ img.user_image{
   padding:10px;
   list-style:none;
 }
- 
+
+.animate-container,
+.animate-repeat,  
 .animate-repeat.ng-enter,
 .animate-repeat.ng-leave,
 .animate-repeat.ng-move {
