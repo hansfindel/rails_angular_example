@@ -1,3 +1,4 @@
+/*
 var adapter = angular.module('adapter', []);
 adapter.rootURL = "http://localhost:3000/"
 adapter.fetch = function(model, query){
@@ -13,3 +14,4 @@ adapter.fetch = function(model, query){
     return results;
   })
 }
+*/

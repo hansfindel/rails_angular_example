@@ -65,6 +65,12 @@ app.factory "Email", ["$resource", ($resource) ->
       return "marked"
     return ""
 
+  $scope.toggleHideClass = ->
+    if $scope.hide == "hidden"
+      $scope.hide = ""
+    else
+      $scope.hide = "hidden"
+
   #$scope.selected = (user) ->
   #  return !!user.marked
 

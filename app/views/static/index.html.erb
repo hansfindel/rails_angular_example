@@ -18,8 +18,8 @@
 					<input type="submit" value="Send">
 				</form>
 			</article>
-			<button onclick='$(".hidden_ul").toggleClass("hidden");'> Toggle </button>
-			<ul class="hidden_ul">
+			<button ng-click='toggleHideClass();'> Toggle </button>
+			<ul class="hidden_ul {{hide}}">
 				<li ng-repeat="user in users | filter: marked=true | orderBy: 'last_name' | orderBy: 'name'" class="user_info block {{class_name(user)}}" ng-click="contact_click()">  <!-- | ﬁlter:city -->
 					<div class="image_containers">
 						<img ng-src={{user.image_path}} class="user_image" />
