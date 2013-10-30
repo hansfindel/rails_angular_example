@@ -19,7 +19,7 @@
 				</form>
 			</article>
 			<button ng-click='toggleHideClass();'> Toggle </button>
-			<ul class="hidden_ul {{hide}}">
+			<ul class="hidden_ul {{hide}}" >
 				<li ng-repeat="user in users | filter: marked=true | orderBy: 'last_name' | orderBy: 'name'" class="user_info block {{class_name(user)}}" ng-click="contact_click()">  <!-- | ﬁlter:city -->
 					<div class="image_containers">
 						<img ng-src={{user.image_path}} class="user_image" />
