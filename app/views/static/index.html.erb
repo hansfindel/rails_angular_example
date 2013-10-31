@@ -1,5 +1,9 @@
-<section ng-app="Contacts" class="searching">
-	<div ng-controller="UserCtrl">
+<section ng-app="Contacts" class="searching" ng-controller="NavCtrl">
+	<nav><ul class="nav" >
+		<li ng-click="select_email()" class="{{send_email}}">Send Email</li>
+		<li ng-click="add_contact()" class="{{add_contact}}">Add contact</li>
+	</ul></nav>
+	<div ng-controller="UserCtrl" class="{{user_ctrl}}" ng-class="{{user_ctrl}}">
 		<form ng-submit="clean_search()" >
 			<input type="text" ng-model="val" ng-change="search()" placeholder="{{search_placeholder()}}", class="search">
 			<input type="submit" value="Clean">
@@ -28,5 +32,23 @@
 				</li>
 			</ul>
 		</article>
+	</div>
+	<div ng-controller="UserCtrl" class="{{newuser_ctrl}}" ng-class="{{newuser_ctrl}}">
+		<h2>Add new contact</h2>
+		<div>
+			<form ng-submit="add_new_contact()" >
+				<div>
+					<label>Name</label>
+					<input name="name" ng-model="newuser.name">
+				</div>
+				<div>
+					<label>Last Name</label>
+					<input name="last_name" ng-model="newuser.last_name">
+				</div>
+				<div> 
+					<input type="submit" value="Add">
+				</div>
+			</form>
+		</div>
 	</div>
 </section>

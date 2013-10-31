@@ -9,11 +9,16 @@ $background: #b0b0b0;
 	/*overflow: hidden;
 	max-height: 0px;*/
 }
-
+.hidden_ul{
+	border: 5px inset;
+	text-align: center;
+	box-shadow: black -10px 20px 50px;
+}
 .searching{
 	padding: 50px;
 	background: $background;
 }
+
 form input.search, form textarea.search{
 	width: 300px;
 	margin-left: -1px;
@@ -142,3 +147,28 @@ li.block{
  
 .animate-repeat.ng-move { }
 .animate-repeat.ng-move.ng-move-active { }
+
+nav{
+	width: calc(100% + 100px);
+	margin-left: -50px;
+	background: black;
+	height: 30px;
+	margin-top: -65px;
+	margin-bottom: 20px;
+
+	ul.nav{
+		li{
+			display: inline-block;
+			width: 200px;
+			height: 25px;
+			padding-top: 5px;
+			background: #808080;
+			color: white;
+			text-align: center;
+			&:hover{
+				background: #909090;
+				cursor: pointer;
+			}
+		}
+	}
+}

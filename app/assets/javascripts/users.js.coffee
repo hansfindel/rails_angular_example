@@ -97,5 +97,24 @@ app.factory "Email", ["$resource", ($resource) ->
 
       data = {text: text, ids: user_ids}
       x = Email.save(data, data, success_handler, error_handler)
+
+
+  $scope.add_new_contact = () ->
+    data = 
+      name: $scope.newuser.name, 
+      last_name: $scope.newuser.last_name
+    
+    success_handler = (data) -> 
+      $scope.newuser.name = ""
+      $scope.newuser.last_name = ""
+      $scope.users.map (u) ->
+      console.log data
+
+    error_handler = (error) ->
+      $scope.newuser.name = "error: " 
+      $scope.newuser.last_name = error 
+      console.log "error_handler"
+    
+    User.save(data, data, success_handler, error_handler)
 ]
 
