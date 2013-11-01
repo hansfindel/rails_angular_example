@@ -1,9 +1,4 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
-
 #app = angular.module("Contacts", ["ngResource"])
-
 
 @NavCtrl = ["$scope", ($scope) ->
   $scope.send_email = "hidden_container"
@@ -26,4 +21,3 @@
     $scope.newuser_ctrl = "show"
     true
 ]
-
