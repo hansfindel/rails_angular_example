@@ -8,6 +8,12 @@ app.factory "Email", ["$resource", ($resource) ->
 ]
 
 @UserCtrl = ["$scope", "User", "Email", ($scope, User, Email) ->
+  $scope.add_user = (user_resource) -> 
+    exists = false
+    $scope.users.map (user_registry) ->
+      exists = exists || (user_registry.url == user_resource.url)
+    $scope.users.push user_resource unless exists
+
   $scope.users = [] #//User.query()
 
   $scope.count = ->
@@ -40,10 +46,8 @@ app.factory "Email", ["$resource", ($resource) ->
 
     success_handler = (data) ->
       data.map (user_resource) ->
-        exists = false
-        $scope.users.map (user_registry) ->
-          exists = exists || (user_registry.url == user_resource.url)
-        $scope.users.push user_resource unless exists
+        $scope.add_user(user_resource)
+
     User.query({val: $scope.val}, {}, success_handler, error_handler)
     return true
     #//entry = Entry.save($scope.newEntry)
@@ -100,14 +104,14 @@ app.factory "Email", ["$resource", ($resource) ->
 
 
   $scope.add_new_contact = () ->
-    data = 
+    info = 
       name: $scope.newuser.name, 
       last_name: $scope.newuser.last_name
     
     success_handler = (data) -> 
       $scope.newuser.name = ""
       $scope.newuser.last_name = ""
-      $scope.users.map (u) ->
+      $scope.add_user(data)
       console.log data
 
     error_handler = (error) ->
@@ -115,6 +119,6 @@ app.factory "Email", ["$resource", ($resource) ->
       $scope.newuser.last_name = error 
       console.log "error_handler"
     
-    User.save(data, data, success_handler, error_handler)
+    User.save(info, info, success_handler, error_handler)
 ]
 
