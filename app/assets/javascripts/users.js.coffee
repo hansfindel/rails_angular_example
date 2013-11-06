@@ -120,5 +120,11 @@ app.factory "Email", ["$resource", ($resource) ->
       console.log "error_handler"
     
     User.save(info, info, success_handler, error_handler)
+
+  $scope.maildisabled = () ->
+    val = $scope.message
+    if val and val != "" 
+      return "available"
+    "disabled"
 ]
 

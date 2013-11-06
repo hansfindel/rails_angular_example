@@ -19,7 +19,7 @@
 			<article class="email_box">
 				<form ng-submit="send_message()" >
 					<textarea type="text" rows="10"  ng-model="message" placeholder="Message text" class="search" ></textarea>
-					<input type="submit" value="Send">
+					<input type="submit" value="Send" class="{{ maildisabled() }}" >
 				</form>
 			</article>
 			<button ng-click='toggleHideClass();'> Toggle </button>
