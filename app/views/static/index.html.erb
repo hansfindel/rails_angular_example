@@ -1,7 +1,7 @@
 <section ng-app="Contacts" class="searching" ng-controller="NavCtrl">
 	<nav><ul class="nav" >
-		<li ng-click="select_email()" class="{{send_email}}">Send Email</li>
-		<li ng-click="add_contact()" class="{{add_contact}}">Add contact</li>
+		<li ng-click="select_email();" class="{{send_email}}">Send Email</li>
+		<li ng-click="add_contact();" class="{{add_contact_class}}">Add contact</li>
 	</ul></nav>
 	<div ng-controller="UserCtrl" class="{{user_ctrl}}" ng-class="{{user_ctrl}}">
 		<form ng-submit="clean_search()" >
@@ -19,7 +19,7 @@
 			<article class="email_box">
 				<form ng-submit="send_message()" >
 					<textarea type="text" rows="10"  ng-model="message" placeholder="Message text" class="search" ></textarea>
-					<input type="submit" value="Send" class="{{ maildisabled() }}" >
+					<input type="submit" value="Send Mail" class="{{ maildisabled() }}" >
 				</form>
 			</article>
 			<button ng-click='toggleHideClass();'> Toggle </button>
